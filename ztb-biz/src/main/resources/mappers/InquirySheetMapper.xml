@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdcplus.xdcweb.biz.mapper.InquirySheetMapper">
+
+    <resultMap type="com.xdcplus.xdcweb.biz.common.pojo.entity.InquirySheet" id="InquirySheetMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="requestId" column="request_id" jdbcType="INTEGER"/>
+        <result property="inquirySheetNum" column="inquiry_sheet_num" jdbcType="VARCHAR"/>
+        <result property="purchasingOrganization" column="purchasing_organization" jdbcType="VARCHAR"/>
+        <result property="companyCode" column="company_code" jdbcType="VARCHAR"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="inquirySheetType" column="inquiry_sheet_type" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="inquiryMode" column="inquiry_mode" jdbcType="VARCHAR"/>
+        <result property="paymentMode" column="payment_mode" jdbcType="VARCHAR"/>
+        <result property="currency" column="currency" jdbcType="VARCHAR"/>
+        <result property="exchangeRate" column="exchange_rate" jdbcType="VARCHAR"/>
+        <result property="quotationDeadline" column="quotation_deadline" jdbcType="INTEGER"/>
+        <result property="signType" column="sign_type" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="offerTax" column="offer_tax" jdbcType="INTEGER"/>
+        <result property="offerTaxCode" column="offer_tax_code" jdbcType="VARCHAR"/>
+        <result property="taxRate" column="tax_rate" jdbcType="VARCHAR"/>
+        <result property="deliveryPoints" column="delivery_points" jdbcType="VARCHAR"/>
+        <result property="sealedBid" column="sealed_bid" jdbcType="INTEGER"/>
+        <result property="round" column="round" jdbcType="VARCHAR"/>
+        <result property="priceType" column="price_type" jdbcType="VARCHAR"/>
+        <result property="approvalProcess" column="approval_process" jdbcType="VARCHAR"/>
+        <result property="icash" column="icash" jdbcType="INTEGER"/>
+        <result property="createdUser" column="created_user" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="INTEGER"/>
+        <result property="updatedUser" column="updated_user" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="version" column="version" jdbcType="INTEGER"/>
+        <result property="deleted" column="deleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryInquirySheet" resultMap="InquirySheetMap">
+        select
+          id,request_id, inquiry_sheet_num, purchasing_organization, company_code,approval_process, title, inquiry_sheet_type, status, inquiry_mode, payment_mode, currency, exchange_rate, quotation_deadline, sign_type, remark, offer_tax, offer_tax_code, tax_rate, delivery_points, sealed_bid, round, price_type, icash, created_user, created_time, updated_user, updated_time, description, version, deleted
+          from scm_inquiry_sheet
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="requestId != null">
+                and request_id = #{requestId}
+            </if>
+            <if test="inquirySheetNum != null and inquirySheetNum != ''">
+                and inquiry_sheet_num = #{inquirySheetNum}
+            </if>
+            <if test="purchasingOrganization != null and purchasingOrganization != ''">
+                and purchasing_organization = #{purchasingOrganization}
+            </if>
+            <if test="companyCode != null and companyCode != ''">
+                and company_code = #{companyCode}
+            </if>
+            <if test="title != null and title != ''">
+                and title = #{title}
+            </if>
+            <if test="inquirySheetType != null and inquirySheetType != ''">
+                and inquiry_sheet_type = #{inquirySheetType}
+            </if>
+            <if test="status != null and status != ''">
+                and status = #{status}
+            </if>
+            <if test="inquiryMode != null and inquiryMode != ''">
+                and inquiry_mode = #{inquiryMode}
+            </if>
+            <if test="paymentMode != null and paymentMode != ''">
+                and payment_mode = #{paymentMode}
+            </if>
+            <if test="currency != null and currency != ''">
+                and currency = #{currency}
+            </if>
+            <if test="exchangeRate != null and exchangeRate != ''">
+                and exchange_rate = #{exchangeRate}
+            </if>
+            <if test="quotationDeadline != null">
+                and quotation_deadline = #{quotationDeadline}
+            </if>
+            <if test="signType != null and signType != ''">
+                and sign_type = #{signType}
+            </if>
+            <if test="remark != null and remark != ''">
+                and remark = #{remark}
+            </if>
+            <if test="offerTax != null">
+                and offer_tax = #{offerTax}
+            </if>
+            <if test="offerTaxCode != null and offerTaxCode != ''">
+                and offer_tax_code = #{offerTaxCode}
+            </if>
+            <if test="taxRate != null and taxRate != ''">
+                and tax_rate = #{taxRate}
+            </if>
+            <if test="deliveryPoints != null and deliveryPoints != ''">
+                and delivery_points = #{deliveryPoints}
+            </if>
+            <if test="sealedBid != null">
+                and sealed_bid = #{sealedBid}
+            </if>
+            <if test="round != null and round != ''">
+                and round = #{round}
+            </if>
+            <if test="priceType != null and priceType != ''">
+                and price_type = #{priceType}
+            </if>
+            <if test="approvalProcess != null and approvalProcess != ''">
+                and approval_process = #{approvalProcess}
+            </if>
+            <if test="icash != null">
+                and icash = #{icash}
+            </if>
+            <if test="createdUser != null and createdUser != ''">
+                and created_user = #{createdUser}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+            <if test="updatedUser != null and updatedUser != ''">
+                and updated_user = #{updatedUser}
+            </if>
+            <if test="updatedTime != null">
+                and updated_time = #{updatedTime}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="version != null">
+                and version = #{version}
+            </if>
+            <if test="deleted != null">
+                and deleted = #{deleted}
+            </if>
+        </where>
+    </select>
+
+</mapper>
+

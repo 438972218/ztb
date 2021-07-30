@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdcplus.xdcweb.biz.mapper.BidVendorMaterialMapper">
+
+    <resultMap type="com.xdcplus.xdcweb.biz.common.pojo.entity.BidVendorMaterial" id="BidVendorMaterialMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="materialId" column="material_id" jdbcType="INTEGER"/>
+        <result property="bidVendorId" column="bid_vendor_id" jdbcType="INTEGER"/>
+        <result property="offeringNumber" column="offering_number" jdbcType="INTEGER"/>
+        <result property="bidder" column="bidder" jdbcType="VARCHAR"/>
+        <result property="bidQuantity" column="bid_quantity" jdbcType="INTEGER"/>
+        <result property="unit" column="unit" jdbcType="VARCHAR"/>
+        <result property="price" column="price" jdbcType="NUMERIC"/>
+        <result property="totalPrice" column="total_price" jdbcType="NUMERIC"/>
+        <result property="deliveryDate" column="delivery_date" jdbcType="VARCHAR"/>
+        <result property="allottedQuantity" column="allotted_quantity" jdbcType="INTEGER"/>
+        <result property="allottedProp" column="allotted_prop" jdbcType="VARCHAR"/>
+        <result property="createdUser" column="created_user" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="INTEGER"/>
+        <result property="updatedUser" column="updated_user" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="version" column="version" jdbcType="INTEGER"/>
+        <result property="deleted" column="deleted" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryBidVendorMaterial" resultMap="BidVendorMaterialMap">
+        select
+          id, material_id, bid_vendor_id,offering_number, bidder, bid_quantity, unit, price, total_price, delivery_date, allotted_quantity, allotted_prop, created_user, created_time, updated_user, updated_time, description, version, deleted,status
+          from scm_bid_vendor_material
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="materialId != null">
+                and material_id = #{materialId}
+            </if>
+            <if test="bidVendorId != null">
+                and bid_vendor_id = #{bidVendorId}
+            </if>
+            <if test="offeringNumber != null">
+                and offering_number = #{offeringNumber}
+            </if>
+            <if test="bidder != null and bidder != ''">
+                and bidder = #{bidder}
+            </if>
+            <if test="bidQuantity != null and bidQuantity != ''">
+                and bid_quantity = #{bidQuantity}
+            </if>
+            <if test="unit != null and unit != ''">
+                and unit = #{unit}
+            </if>
+            <if test="price != null and price != ''">
+                and price = #{price}
+            </if>
+            <if test="totalPrice != null and totalPrice != ''">
+                and total_price = #{totalPrice}
+            </if>
+            <if test="deliveryDate != null and deliveryDate != ''">
+                and delivery_date = #{deliveryDate}
+            </if>
+            <if test="allottedQuantity != null and allottedQuantity != ''">
+                and allotted_quantity = #{allottedQuantity}
+            </if>
+            <if test="allottedProp != null and allottedProp != ''">
+                and allotted_prop = #{allottedProp}
+            </if>
+            <if test="createdUser != null and createdUser != ''">
+                and created_user = #{createdUser}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+            <if test="updatedUser != null and updatedUser != ''">
+                and updated_user = #{updatedUser}
+            </if>
+            <if test="updatedTime != null">
+                and updated_time = #{updatedTime}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="version != null">
+                and version = #{version}
+            </if>
+            <if test="deleted != null">
+                and deleted = #{deleted}
+            </if>
+            <if test="status != null and status != ''">
+                and status = #{status}
+            </if>
+        </where>
+    </select>
+    <select id="queryNewBidVendorMaterialByMaterialId" resultMap="BidVendorMaterialMap">
+        SELECT vm.*
+            FROM scm_bid_vendor_material vm
+        WHERE vm.offering_number = (
+            SELECT max( offering_number )
+                FROM scm_bid_vendor_material
+            WHERE bid_vendor_id = vm.bid_vendor_id
+            <if test="materialId != null">
+                AND material_id = #{materialId}
+            </if>
+            <if test="bidVendorId != null">
+                AND bid_vendor_id = #{bidVendorId}
+            </if>)
+        <if test="materialId != null">
+            AND vm.material_id = #{materialId}
+        </if>
+        <if test="bidVendorId != null">
+            AND vm.bid_vendor_id = #{bidVendorId}
+        </if>
+    </select>
+    <select id="getTotalPriceByBidVendorId" resultType="java.lang.Double">
+        SELECT SUM( a. total_price )
+            FROM (
+	        SELECT vm1.*
+	            FROM scm_bid_vendor_material vm1
+	        WHERE vm1.offering_number =(
+		        SELECT MAX( vm.offering_number )
+		            FROM scm_bid_vendor_material vm
+			        LEFT JOIN scm_bid_material m ON m.id = vm.material_id
+		        WHERE m.bid_sheet_id = #{bidSheetId}
+			AND vm.bid_vendor_id = #{bidVendorId}
+			AND vm.material_id = vm1.material_id
+			AND vm.bid_vendor_id = vm1.bid_vendor_id
+		)) a
+        GROUP BY a.bid_vendor_id
+    </select>
+    <select id="querySaveBidVendorMaterialBySheetId" resultMap="BidVendorMaterialMap">
+        SELECT vm.* from scm_bid_vendor_material vm
+            left join scm_bid_material m on m.id=vm.material_id
+        where m.bid_sheet_id=#{id} and vm.status="保存"
+    </select>
+
+</mapper>
+

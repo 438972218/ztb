@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdcplus.xdcweb.biz.mapper.PaidSheetMapper">
+
+    <resultMap type="com.xdcplus.xdcweb.biz.common.pojo.entity.PaidSheet" id="PaidSheetMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="requestId" column="request_id" jdbcType="INTEGER"/>
+        <result property="paidNum" column="paid_num" jdbcType="VARCHAR"/>
+        <result property="purchasingOrganization" column="purchasing_organization" jdbcType="VARCHAR"/>
+        <result property="companyCode" column="company_code" jdbcType="VARCHAR"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="paidType" column="paid_type" jdbcType="VARCHAR"/>
+        <result property="paidDirection" column="paid_direction" jdbcType="VARCHAR"/>
+        <result property="paidMode" column="paid_mode" jdbcType="VARCHAR"/>
+        <result property="paymentMode" column="payment_mode" jdbcType="VARCHAR"/>
+        <result property="currency" column="currency" jdbcType="VARCHAR"/>
+        <result property="exchangeRate" column="exchange_rate" jdbcType="VARCHAR"/>
+        <result property="offerStartTime" column="offer_start_time" jdbcType="INTEGER"/>
+        <result property="offerEndTime" column="offer_end_time" jdbcType="INTEGER"/>
+        <result property="bidType" column="bid_type" jdbcType="VARCHAR"/>
+        <result property="offerTax" column="offer_tax" jdbcType="INTEGER"/>
+        <result property="offerTaxCode" column="offer_tax_code" jdbcType="VARCHAR"/>
+        <result property="taxRate" column="tax_rate" jdbcType="VARCHAR"/>
+        <result property="sealedBid" column="sealed_bid" jdbcType="INTEGER"/>
+        <result property="priceRange" column="price_range" jdbcType="VARCHAR"/>
+        <result property="rangeType" column="range_type" jdbcType="VARCHAR"/>
+        <result property="sourcingType" column="sourcing_type" jdbcType="VARCHAR"/>
+        <result property="publicRules" column="public_rules" jdbcType="VARCHAR"/>
+        <result property="biddingRules" column="bidding_rules" jdbcType="VARCHAR"/>
+        <result property="priceType" column="price_type" jdbcType="VARCHAR"/>
+        <result property="approvalProcess" column="approval_process" jdbcType="VARCHAR"/>
+        <result property="deliveryPlace" column="delivery_place" jdbcType="VARCHAR"/>
+        <result property="bidNumber" column="bid_number" jdbcType="INTEGER"/>
+        <result property="autoExtension" column="auto_extension" jdbcType="VARCHAR"/>
+        <result property="bidRanking" column="bid_ranking" jdbcType="VARCHAR"/>
+        <result property="explaination" column="explaination" jdbcType="VARCHAR"/>
+        <result property="createdUser" column="created_user" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="INTEGER"/>
+        <result property="updatedUser" column="updated_user" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="version" column="version" jdbcType="INTEGER"/>
+        <result property="deleted" column="deleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryPaidSheet" resultMap="PaidSheetMap">
+        select
+          id,request_id, paid_num, purchasing_organization, company_code,approval_process, title, paid_type, paid_direction, paid_mode, payment_mode, currency, exchange_rate, offer_start_time, offer_end_time, bid_type, offer_tax, offer_tax_code, tax_rate, sealed_bid, price_range,range_type, sourcing_type, public_rules, bidding_rules, price_type, delivery_place, bid_number, auto_extension, bid_ranking, explaination, created_user, created_time, updated_user, updated_time, description, version, deleted
+          from scm_paid_sheet
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="requestId != null">
+                and request_id = #{requestId}
+            </if>
+            <if test="paidNum != null and paidNum != ''">
+                and paid_num = #{paidNum}
+            </if>
+            <if test="purchasingOrganization != null and purchasingOrganization != ''">
+                and purchasing_organization = #{purchasingOrganization}
+            </if>
+            <if test="companyCode != null and companyCode != ''">
+                and company_code = #{companyCode}
+            </if>
+            <if test="title != null and title != ''">
+                and title = #{title}
+            </if>
+            <if test="paidType != null and paidType != ''">
+                and paid_type = #{paidType}
+            </if>
+            <if test="paidDirection != null and paidDirection != ''">
+                and paid_direction = #{paidDirection}
+            </if>
+            <if test="paidMode != null and paidMode != ''">
+                and paid_mode = #{paidMode}
+            </if>
+            <if test="paymentMode != null and paymentMode != ''">
+                and payment_mode = #{paymentMode}
+            </if>
+            <if test="currency != null and currency != ''">
+                and currency = #{currency}
+            </if>
+            <if test="exchangeRate != null and exchangeRate != ''">
+                and exchange_rate = #{exchangeRate}
+            </if>
+            <if test="offerStartTime != null">
+                and offer_start_time = #{offerStartTime}
+            </if>
+            <if test="offerEndTime != null">
+                and offer_end_time = #{offerEndTime}
+            </if>
+            <if test="bidType != null and bidType != ''">
+                and bid_type = #{bidType}
+            </if>
+            <if test="offerTax != null">
+                and offer_tax = #{offerTax}
+            </if>
+            <if test="offerTaxCode != null and offerTaxCode != ''">
+                and offer_tax_code = #{offerTaxCode}
+            </if>
+            <if test="taxRate != null and taxRate != ''">
+                and tax_rate = #{taxRate}
+            </if>
+            <if test="sealedBid != null">
+                and sealed_bid = #{sealedBid}
+            </if>
+            <if test="priceRange != null and priceRange != ''">
+                and price_range = #{priceRange}
+            </if>
+            <if test="rangeType != null and rangeType != ''">
+                and range_type = #{rangeType}
+            </if>
+            <if test="sourcingType != null and sourcingType != ''">
+                and sourcing_type = #{sourcingType}
+            </if>
+            <if test="publicRules != null and publicRules != ''">
+                and public_rules = #{publicRules}
+            </if>
+            <if test="biddingRules != null and biddingRules != ''">
+                and bidding_rules = #{biddingRules}
+            </if>
+            <if test="priceType != null and priceType != ''">
+                and price_type = #{priceType}
+            </if>
+            <if test="approvalProcess != null and approvalProcess != ''">
+                and approval_process = #{approvalProcess}
+            </if>
+            <if test="deliveryPlace != null and deliveryPlace != ''">
+                and delivery_place = #{deliveryPlace}
+            </if>
+            <if test="bidNumber != null">
+                and bid_number = #{bidNumber}
+            </if>
+            <if test="autoExtension != null and autoExtension != ''">
+                and auto_extension = #{autoExtension}
+            </if>
+            <if test="bidRanking != null and bidRanking != ''">
+                and bid_ranking = #{bidRanking}
+            </if>
+            <if test="explaination != null and explaination != ''">
+                and explaination = #{explaination}
+            </if>
+            <if test="createdUser != null and createdUser != ''">
+                and created_user = #{createdUser}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+            <if test="updatedUser != null and updatedUser != ''">
+                and updated_user = #{updatedUser}
+            </if>
+            <if test="updatedTime != null">
+                and updated_time = #{updatedTime}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="version != null">
+                and version = #{version}
+            </if>
+            <if test="deleted != null">
+                and deleted = #{deleted}
+            </if>
+        </where>
+    </select>
+
+</mapper>
+

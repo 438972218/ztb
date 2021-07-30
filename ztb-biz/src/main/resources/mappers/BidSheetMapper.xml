@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdcplus.xdcweb.biz.mapper.BidSheetMapper">
+
+    <resultMap type="com.xdcplus.xdcweb.biz.common.pojo.entity.BidSheet" id="BidSheetMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="requestId" column="request_id" jdbcType="INTEGER"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="bidSheetNum" column="bid_sheet_num" jdbcType="VARCHAR"/>
+        <result property="purchasingOrganization" column="purchasing_organization" jdbcType="VARCHAR"/>
+        <result property="companyCode" column="company_code" jdbcType="VARCHAR"/>
+        <result property="sheetType" column="sheet_type" jdbcType="VARCHAR"/>
+        <result property="round" column="round" jdbcType="VARCHAR"/>
+        <result property="versions" column="versions" jdbcType="VARCHAR"/>
+        <result property="tenderType" column="tender_type" jdbcType="VARCHAR"/>
+        <result property="tenderMode" column="tender_mode" jdbcType="VARCHAR"/>
+        <result property="preQualification" column="pre_qualification" jdbcType="INTEGER"/>
+        <result property="applicationDeadline" column="application_deadline" jdbcType="INTEGER"/>
+        <result property="prequalificationEndTime" column="prequalification_end_time" jdbcType="INTEGER"/>
+        <result property="bidEndTime" column="bid_end_time" jdbcType="INTEGER"/>
+        <result property="openBidTime" column="open_bid_time" jdbcType="INTEGER"/>
+        <result property="openBidPlace" column="open_bid_place" jdbcType="VARCHAR"/>
+        <result property="signType" column="sign_type" jdbcType="VARCHAR"/>
+        <result property="projectLocation" column="project_location" jdbcType="VARCHAR"/>
+        <result property="tenderUser" column="tender_user" jdbcType="VARCHAR"/>
+        <result property="offerTax" column="offer_tax" jdbcType="INTEGER"/>
+        <result property="currency" column="currency" jdbcType="VARCHAR"/>
+        <result property="tenderDocumentFree" column="tender_document_free" jdbcType="INTEGER"/>
+        <result property="tenderDocumentCost" column="tender_document_cost" jdbcType="NUMERIC"/>
+        <result property="priceType" column="price_type" jdbcType="VARCHAR"/>
+        <result property="approvalProcess" column="approval_process" jdbcType="VARCHAR"/>
+        <result property="projectDeliveryDate" column="project_delivery_date" jdbcType="INTEGER"/>
+        <result property="marginCall" column="margin_call" jdbcType="INTEGER"/>
+        <result property="earnestMoney" column="earnest_money" jdbcType="NUMERIC"/>
+        <result property="locCurrencyAmount" column="Loc_currency_amount" jdbcType="NUMERIC"/>
+        <result property="oriCurrencyAmount" column="ori_currency_amount" jdbcType="NUMERIC"/>
+        <result property="tenderMatters" column="tender_matters" jdbcType="VARCHAR"/>
+        <result property="explanation" column="explanation" jdbcType="VARCHAR"/>
+        <result property="createdUser" column="created_user" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="INTEGER"/>
+        <result property="updatedUser" column="updated_user" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="version" column="version" jdbcType="INTEGER"/>
+        <result property="deleted" column="deleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryBidSheet" resultMap="BidSheetMap">
+        select
+          id,request_id, bid_sheet_num,title, purchasing_organization, company_code,approval_process, sheet_type, round, versions, tender_type, tender_mode, pre_qualification, application_deadline, prequalification_end_time, bid_end_time, open_bid_time, open_bid_place, sign_type, project_location, tender_user, offer_tax, currency, tender_document_free, tender_document_cost, price_type,approval_process, project_delivery_date, margin_call, earnest_money, Loc_currency_amount, ori_currency_amount, tender_matters, explanation, created_user, created_time, updated_user, updated_time, description, version, deleted
+          from scm_bid_sheet
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="requestId != null">
+                and request_id = #{requestId}
+            </if>
+            <if test="bidSheetNum != null and bidSheetNum != ''">
+                and bid_sheet_num = #{bidSheetNum}
+            </if>
+            <if test="title != null and title != ''">
+                and title = #{title}
+            </if>
+            <if test="purchasingOrganization != null and purchasingOrganization != ''">
+                and purchasing_organization = #{purchasingOrganization}
+            </if>
+            <if test="companyCode != null and companyCode != ''">
+                and company_code = #{companyCode}
+            </if>
+            <if test="sheetType != null and sheetType != ''">
+                and sheet_type = #{sheetType}
+            </if>
+            <if test="round != null and round != ''">
+                and round = #{round}
+            </if>
+            <if test="versions != null and versions != ''">
+                and versions = #{versions}
+            </if>
+            <if test="tenderType != null and tenderType != ''">
+                and tender_type = #{tenderType}
+            </if>
+            <if test="tenderMode != null and tenderMode != ''">
+                and tender_mode = #{tenderMode}
+            </if>
+            <if test="preQualification != null">
+                and pre_qualification = #{preQualification}
+            </if>
+            <if test="applicationDeadline != null">
+                and application_deadline = #{applicationDeadline}
+            </if>
+            <if test="prequalificationEndTime != null">
+                and prequalification_end_time = #{prequalificationEndTime}
+            </if>
+            <if test="bidEndTime != null">
+                and bid_end_time = #{bidEndTime}
+            </if>
+            <if test="openBidTime != null">
+                and open_bid_time = #{openBidTime}
+            </if>
+            <if test="openBidPlace != null and openBidPlace != ''">
+                and open_bid_place = #{openBidPlace}
+            </if>
+            <if test="signType != null and signType != ''">
+                and sign_type = #{signType}
+            </if>
+            <if test="projectLocation != null and projectLocation != ''">
+                and project_location = #{projectLocation}
+            </if>
+            <if test="tenderUser != null and tenderUser != ''">
+                and tender_user = #{tenderUser}
+            </if>
+            <if test="offerTax != null">
+                and offer_tax = #{offerTax}
+            </if>
+            <if test="currency != null and currency != ''">
+                and currency = #{currency}
+            </if>
+            <if test="tenderDocumentFree != null">
+                and tender_document_free = #{tenderDocumentFree}
+            </if>
+            <if test="tenderDocumentCost != null">
+                and tender_document_cost = #{tenderDocumentCost}
+            </if>
+            <if test="priceType != null and priceType != ''">
+                and price_type = #{priceType}
+            </if>
+            <if test="approvalProcess != null and approvalProcess != ''">
+                and approval_process = #{approvalProcess}
+            </if>
+            <if test="projectDeliveryDate != null">
+                and project_delivery_date = #{projectDeliveryDate}
+            </if>
+            <if test="marginCall != null">
+                and margin_call = #{marginCall}
+            </if>
+            <if test="earnestMoney != null">
+                and earnest_money = #{earnestMoney}
+            </if>
+            <if test="locCurrencyAmount != null">
+                and Loc_currency_amount = #{locCurrencyAmount}
+            </if>
+            <if test="oriCurrencyAmount != null">
+                and ori_currency_amount = #{oriCurrencyAmount}
+            </if>
+            <if test="tenderMatters != null and tenderMatters != ''">
+                and tender_matters = #{tenderMatters}
+            </if>
+            <if test="explanation != null and explanation != ''">
+                and explanation = #{explanation}
+            </if>
+            <if test="createdUser != null and createdUser != ''">
+                and created_user = #{createdUser}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+            <if test="updatedUser != null and updatedUser != ''">
+                and updated_user = #{updatedUser}
+            </if>
+            <if test="updatedTime != null">
+                and updated_time = #{updatedTime}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="version != null">
+                and version = #{version}
+            </if>
+            <if test="deleted != null">
+                and deleted = #{deleted}
+            </if>
+        </where>
+    </select>
+
+</mapper>
+

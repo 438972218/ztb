@@ -1,0 +1,67 @@
+server:
+  port: 8080
+
+#spring:
+#  cloud:
+#    nacos:
+#      # 配置中心
+#      config:
+#        server-addr: localhost:8848
+#        namespace: ztb-biz
+
+spring:
+  # mysql 配置
+  datasource:
+    url: jdbc:mysql://10.20.54.133:3306/ztb_biz?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: xdcplus.com
+    # schema:
+  #    - classpath:sql/schema.sql
+
+  # redis 缓存配置
+  redis:
+    host: 10.20.54.162
+    port: 6379
+    database: 10
+
+
+swagger:
+  base-packages: com.xdcplus.xdcweb.biz.controller
+
+file:
+  minio:
+    enable: true
+    endpoint: http://10.20.54.133:9000
+    bucket: ztb
+    access-key: minio
+    secret-key: minio123
+
+#knife4j配置
+knife4j:
+  #启用
+  enable: true
+
+url:
+  ip:
+    # 权限收放引擎IP
+    permControlEngineIp: 10.20.54.133
+    # 流程引擎IP
+    interactionEngineIp: 10.20.54.133
+  port:
+    # 权限收放引擎端口
+    permControlEnginePort: 10000
+    # 流程引擎端口
+    interactionEnginePort: 10001
+  path:
+    pceSysCompanyQueryByUserId: /api/pce/sysCompany/queryById/{id}
+    pceSysCompanyGetSysCompanyTree: /api/pce/sysCompany/getSysCompanyTree
+    pceSysCompanyJudgeGroupCompany: /api/pce/sysCompany/judgeGroupCompany/{id}
+    pceSysRoleQueryByUserId: /api/pce/sysRole/queryByUserId/{id}
+    pceSysUserQueryByUserId: /api/pce/sysUser/{id}
+    ieRequestFlowPostProcess: /interaction/requestFlow
+    ieRequestSaveRequest: /interaction/request
+    ieRequestQueryRequestById: /interaction/request/{id}
+    ieRequestQueryRequestByParentId: /interaction/request
+
+
+

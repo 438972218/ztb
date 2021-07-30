@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ztb-biz/ztb-biz.iml" filepath="$PROJECT_DIR$/ztb-biz/ztb-biz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ztb-manage-cloud.iml" filepath="$PROJECT_DIR$/ztb-manage-cloud.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,139 @@
+2021-07-30 09:03:19.858 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+2021-07-30 09:03:19.868 [main] INFO  com.xdcplus.xdcweb.biz.XdcWebBizApplication - Starting XdcWebBizApplication on DESKTOP-Q8MO3KR with PID 12788 (D:\gitlab\ztb-manage-cloud\v3\ztb-manage-cloud\ztb-biz\target\classes started by Fish.Fei in D:\gitlab\ztb-manage-cloud\v3\ztb-manage-cloud)
+2021-07-30 09:03:19.869 [main] INFO  com.xdcplus.xdcweb.biz.XdcWebBizApplication - The following profiles are active: ztb-biz,public,common,dev
+2021-07-30 09:03:21.756 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-30 09:03:21.759 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-30 09:03:21.842 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63ms. Found 0 Redis repository interfaces.
+2021-07-30 09:03:22.166 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'executorConfig' of type [com.xdcplus.auto.ExecutorConfig$$EnhancerBySpringCGLIB$$5a1c93c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 09:03:22.278 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 09:03:22.287 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 09:03:22.462 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 09:03:22.554 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 09:03:22.559 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 09:03:22.560 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.xdcplus.cache.redis.RedisConfig$$EnhancerBySpringCGLIB$$a8ca58f1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 09:03:22.880 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-07-30 09:03:22.890 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-30 09:03:22.891 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-07-30 09:03:22.891 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-30 09:03:22.993 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-07-30 09:03:22.993 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3058 ms
+2021-07-30 09:03:23.232 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-07-30 09:03:23.234 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'executor'
+2021-07-30 09:03:23.992 [main] INFO  plus.ojbk.minio.core.MinioTemplate - Init Default Bucket :ztb .
+2021-07-30 09:03:24.136 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-07-30 09:03:24.230 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-07-30 09:03:27.784 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2021-07-30 09:03:27.844 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2021-07-30 09:03:27.845 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2021-07-30 09:03:28.409 [main] INFO  s.d.s.w.WebMvcPropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+2021-07-30 09:03:28.903 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-07-30 09:03:28.978 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-30 09:03:28.980 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Documentation plugins bootstrapped
+2021-07-30 09:03:28.982 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-07-30 09:03:29.106 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-07-30 09:03:29.661 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: queryAllocatedRankingUsingPOST_1
+2021-07-30 09:03:29.674 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: submitOfferUsingPOST_1
+2021-07-30 09:03:29.828 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: queryAllocatedRankingUsingPOST_2
+2021-07-30 09:03:29.856 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findPurchaseOrzUsingGET_1
+2021-07-30 09:03:29.934 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: saveUserCompanyUsingPOST_1
+2021-07-30 09:03:30.036 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: showInquirySheetByIdUsingGET_1
+2021-07-30 09:03:30.096 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findVendorQualifyReviewWithRequestUsingGET_1
+2021-07-30 09:03:30.137 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateVendorQuestionWithDetailUsingPUT_1
+2021-07-30 09:03:30.209 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: agreeVendorQuestionUsingPOST_1
+2021-07-30 09:03:30.249 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: agreeVendorQualifyReviewUsingPOST_1
+2021-07-30 09:03:30.279 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findVendorQuestionWithRequestUsingGET_1
+2021-07-30 09:03:30.368 [main] INFO  com.xdcplus.xdcweb.biz.XdcWebBizApplication - Started XdcWebBizApplication in 11.058 seconds (JVM running for 13.086)
+2021-07-30 09:04:36.188 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-30 09:04:36.188 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-07-30 09:04:36.210 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 21 ms
+2021-07-30 09:04:36.432 [http-nio-8080-exec-1] INFO  c.x.xdcweb.biz.controller.PaidSheetController - findPaidSheetByVendor PaidSheetFilterDTO(id=null, requestId=null, paidNum=null, purchasingOrganization=null, companyCode=null, title=null, paidType=null, paidDirection=null, paidMode=null, paymentMode=null, currency=null, exchangeRate=null, offerStartTime=null, offerEndTime=null, bidType=null, offerTax=null, offerTaxCode=null, taxRate=null, sealedBid=null, priceRange=null, rangeType=null, sourcingType=null, publicRules=null, biddingRules=null, priceType=null, approvalProcess=null, deliveryPlace=null, bidNumber=null, autoExtension=null, bidRanking=null, explaination=null, createdUser=null, createdTime=null, updatedUser=null, updatedTime=null, description=null, version=null, deleted=null, vendorCode=null, requestStatusName=null)
+2021-07-30 09:05:08.321 [http-nio-8080-exec-7] INFO  c.x.xdcweb.biz.controller.PaidSheetController - findPaidSheetByVendor PaidSheetFilterDTO(id=null, requestId=null, paidNum=null, purchasingOrganization=null, companyCode=null, title=null, paidType=null, paidDirection=null, paidMode=null, paymentMode=null, currency=null, exchangeRate=null, offerStartTime=null, offerEndTime=null, bidType=null, offerTax=null, offerTaxCode=null, taxRate=null, sealedBid=null, priceRange=null, rangeType=null, sourcingType=null, publicRules=null, biddingRules=null, priceType=null, approvalProcess=null, deliveryPlace=null, bidNumber=null, autoExtension=null, bidRanking=null, explaination=null, createdUser=null, createdTime=null, updatedUser=null, updatedTime=null, description=null, version=null, deleted=null, vendorCode=null, requestStatusName=null)
+2021-07-30 09:13:26.294 [http-nio-8080-exec-3] INFO  c.x.xdcweb.biz.controller.PaidSheetController - findPaidSheetByVendor PaidSheetFilterDTO(id=null, requestId=null, paidNum=null, purchasingOrganization=null, companyCode=null, title=null, paidType=null, paidDirection=null, paidMode=null, paymentMode=null, currency=null, exchangeRate=null, offerStartTime=null, offerEndTime=null, bidType=null, offerTax=null, offerTaxCode=null, taxRate=null, sealedBid=null, priceRange=null, rangeType=null, sourcingType=null, publicRules=null, biddingRules=null, priceType=null, approvalProcess=null, deliveryPlace=null, bidNumber=null, autoExtension=null, bidRanking=null, explaination=null, createdUser=null, createdTime=null, updatedUser=null, updatedTime=null, description=null, version=null, deleted=null, vendorCode=null, requestStatusName=null)
+2021-07-30 10:29:04.244 [http-nio-8080-exec-5] INFO  c.xdcplus.xdcweb.biz.controller.BidSheetController - findBidSheetByVendor BidSheetFilterDTO(id=null, requestId=null, bidSheetNum=null, title=null, purchasingOrganization=null, companyCode=null, SheetType=null, round=null, versions=null, tenderType=null, tenderMode=null, preQualification=null, applicationDeadline=null, prequalificationEndTime=null, bidEndTime=null, openBidTime=null, openBidPlace=null, signType=null, projectLocation=null, tenderUser=null, offerTax=null, currency=null, tenderDocumentFree=null, tenderDocumentCost=null, priceType=null, approvalProcess=null, projectDeliveryDate=null, marginCall=null, earnestMoney=null, locCurrencyAmount=null, oriCurrencyAmount=null, tenderMatters=null, explanation=null, createdUser=null, createdTime=null, updatedUser=null, updatedTime=null, description=null, version=null, deleted=null, vendorCode=test)
+2021-07-30 10:29:25.347 [http-nio-8080-exec-2] INFO  c.xdcplus.xdcweb.biz.controller.BidSheetController - findBidSheetByVendor BidSheetFilterDTO(id=null, requestId=null, bidSheetNum=null, title=null, purchasingOrganization=null, companyCode=null, SheetType=null, round=null, versions=null, tenderType=null, tenderMode=null, preQualification=null, applicationDeadline=null, prequalificationEndTime=null, bidEndTime=null, openBidTime=null, openBidPlace=null, signType=null, projectLocation=null, tenderUser=null, offerTax=null, currency=null, tenderDocumentFree=null, tenderDocumentCost=null, priceType=null, approvalProcess=null, projectDeliveryDate=null, marginCall=null, earnestMoney=null, locCurrencyAmount=null, oriCurrencyAmount=null, tenderMatters=null, explanation=null, createdUser=null, createdTime=null, updatedUser=null, updatedTime=null, description=null, version=null, deleted=null, vendorCode=test)
+2021-07-30 10:50:48.700 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2021-07-30 10:50:48.708 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2021-07-30 10:50:48.711 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2021-07-30 10:50:48.711 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'executor'
+2021-07-30 10:50:53.891 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+2021-07-30 10:50:53.898 [main] INFO  com.xdcplus.xdcweb.biz.XdcWebBizApplication - Starting XdcWebBizApplication on DESKTOP-Q8MO3KR with PID 14912 (D:\gitlab\ztb-manage-cloud\v3\ztb-manage-cloud\ztb-biz\target\classes started by Fish.Fei in D:\gitlab\ztb-manage-cloud\v3\ztb-manage-cloud)
+2021-07-30 10:50:53.899 [main] INFO  com.xdcplus.xdcweb.biz.XdcWebBizApplication - The following profiles are active: ztb-biz,public,common,dev
+2021-07-30 10:50:55.059 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-30 10:50:55.061 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-30 10:50:55.119 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49ms. Found 0 Redis repository interfaces.
+2021-07-30 10:50:55.331 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'executorConfig' of type [com.xdcplus.auto.ExecutorConfig$$EnhancerBySpringCGLIB$$a76b0631] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 10:50:55.408 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 10:50:55.415 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 10:50:55.522 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 10:50:55.589 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 10:50:55.597 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 10:50:55.601 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.xdcplus.cache.redis.RedisConfig$$EnhancerBySpringCGLIB$$f618cb5b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-30 10:50:55.859 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-07-30 10:50:55.866 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-30 10:50:55.867 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-07-30 10:50:55.867 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-07-30 10:50:55.954 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-07-30 10:50:55.954 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2007 ms
+2021-07-30 10:50:56.140 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2021-07-30 10:50:56.142 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'executor'
+2021-07-30 10:50:56.643 [main] INFO  plus.ojbk.minio.core.MinioTemplate - Init Default Bucket :ztb .
+2021-07-30 10:50:56.799 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-07-30 10:50:56.926 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-07-30 10:51:00.677 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2021-07-30 10:51:00.735 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2021-07-30 10:51:00.737 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2021-07-30 10:51:01.210 [main] INFO  s.d.s.w.WebMvcPropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+2021-07-30 10:51:01.702 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-07-30 10:51:01.757 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-30 10:51:01.759 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Documentation plugins bootstrapped
+2021-07-30 10:51:01.763 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-07-30 10:51:01.911 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-07-30 10:51:02.744 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: queryAllocatedRankingUsingPOST_1
+2021-07-30 10:51:02.761 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: submitOfferUsingPOST_1
+2021-07-30 10:51:03.053 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: queryAllocatedRankingUsingPOST_2
+2021-07-30 10:51:03.122 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findPurchaseOrzUsingGET_1
+2021-07-30 10:51:03.254 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: saveUserCompanyUsingPOST_1
+2021-07-30 10:51:03.448 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: showInquirySheetByIdUsingGET_1
+2021-07-30 10:51:03.550 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findVendorQualifyReviewWithRequestUsingGET_1
+2021-07-30 10:51:03.625 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateVendorQuestionWithDetailUsingPUT_1
+2021-07-30 10:51:03.707 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: agreeVendorQuestionUsingPOST_1
+2021-07-30 10:51:03.768 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: agreeVendorQualifyReviewUsingPOST_1
+2021-07-30 10:51:03.823 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: findVendorQuestionWithRequestUsingGET_1
+2021-07-30 10:51:03.991 [main] INFO  com.xdcplus.xdcweb.biz.XdcWebBizApplication - Started XdcWebBizApplication in 10.483 seconds (JVM running for 11.414)
+2021-07-30 10:51:24.481 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-30 10:51:24.482 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-07-30 10:51:24.492 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2021-07-30 10:51:24.594 [http-nio-8080-exec-1] INFO  c.xdcplus.xdcweb.biz.controller.BidSheetController - agreeBidSheet RequestFlowDTO(sheetId=null, requestId=1420933214832238594, userId=1, toUserId=null, statusId=null, description=null, flowOption=null)
+2021-07-30 10:51:24.802 [http-nio-8080-exec-1] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - postProcess() get api postProcess failed
+2021-07-30 10:51:24.803 [http-nio-8080-exec-1] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - postProcess API获取表单流转失败
+2021-07-30 10:51:24.832 [http-nio-8080-exec-1] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - postProcess() get api postProcess failed
+2021-07-30 10:51:24.833 [http-nio-8080-exec-1] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - postProcess API获取表单流转失败
+2021-07-30 10:51:24.859 [http-nio-8080-exec-1] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - postProcess() get api postProcess failed
+2021-07-30 10:51:24.859 [http-nio-8080-exec-1] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - postProcess API获取表单流转失败
+2021-07-30 10:51:24.859 [http-nio-8080-exec-1] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - Maximum number of retries : url : http://10.20.54.133:10001/interaction/requestFlow, index : 3
+2021-07-30 10:51:24.861 [http-nio-8080-exec-1] ERROR c.x.x.b.c.exceptions.handler.InvExceptionHandler - invExceptionHandler  API获取表单流转失败
+2021-07-30 10:51:58.978 [http-nio-8080-exec-2] INFO  c.xdcplus.xdcweb.biz.controller.BidSheetController - agreeBidSheet RequestFlowDTO(sheetId=null, requestId=1420933214832238594, userId=1, toUserId=null, statusId=null, description=null, flowOption=null)
+2021-07-30 10:55:52.032 [http-nio-8080-exec-2] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - postProcess() get api postProcess failed
+2021-07-30 10:55:52.032 [http-nio-8080-exec-2] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - postProcess API获取表单流转失败
+2021-07-30 10:55:53.175 [http-nio-8080-exec-2] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - postProcess() get api postProcess failed
+2021-07-30 10:55:53.175 [http-nio-8080-exec-2] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - postProcess API获取表单流转失败
+2021-07-30 10:55:54.744 [http-nio-8080-exec-2] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - postProcess() get api postProcess failed
+2021-07-30 10:55:54.745 [http-nio-8080-exec-2] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - postProcess API获取表单流转失败
+2021-07-30 10:55:54.745 [http-nio-8080-exec-2] ERROR c.x.x.b.c.interaction.IeRequestFlowResponseUtils - Maximum number of retries : url : http://10.20.54.133:10001/interaction/requestFlow, index : 3
+2021-07-30 10:55:54.746 [http-nio-8080-exec-2] ERROR c.x.x.b.c.exceptions.handler.InvExceptionHandler - invExceptionHandler  API获取表单流转失败
+2021-07-30 11:06:19.106 [http-nio-8080-exec-5] INFO  c.xdcplus.xdcweb.biz.controller.BidSheetController - agreeBidSheet RequestFlowDTO(sheetId=null, requestId=1420933214832238594, userId=1, toUserId=null, statusId=null, description=null, flowOption=null)
+2021-07-30 11:06:53.158 [http-nio-8080-exec-5] ERROR c.x.xdcweb.biz.service.impl.BidVendorServiceImpl - updateBidVendorStatusByPricing() queryNewBidVendorMaterialByMaterialId failed
+2021-07-30 11:06:53.158 [http-nio-8080-exec-5] ERROR c.x.x.b.c.exceptions.handler.InvExceptionHandler - invExceptionHandler  招标单查询失败
+2021-07-30 11:06:55.128 [http-nio-8080-exec-4] INFO  c.xdcplus.xdcweb.biz.controller.BidSheetController - agreeBidSheet RequestFlowDTO(sheetId=null, requestId=1420933214832238594, userId=1, toUserId=null, statusId=null, description=null, flowOption=null)
+2021-07-30 11:08:20.137 [http-nio-8080-exec-4] ERROR c.x.xdcweb.biz.service.impl.BidVendorServiceImpl - updateBidVendorStatusByPricing() queryNewBidVendorMaterialByMaterialId failed
+2021-07-30 11:08:20.137 [http-nio-8080-exec-4] ERROR c.x.x.b.c.exceptions.handler.InvExceptionHandler - invExceptionHandler  招标单查询失败
+2021-07-30 11:08:23.288 [http-nio-8080-exec-7] INFO  c.xdcplus.xdcweb.biz.controller.BidSheetController - agreeBidSheet RequestFlowDTO(sheetId=null, requestId=1420933214832238594, userId=1, toUserId=null, statusId=null, description=null, flowOption=null)
+2021-07-30 11:08:34.935 [http-nio-8080-exec-7] ERROR c.x.xdcweb.biz.service.impl.BidVendorServiceImpl - updateBidVendorStatusByPricing() queryNewBidVendorMaterialByMaterialId failed
+2021-07-30 11:08:34.935 [http-nio-8080-exec-7] ERROR c.x.x.b.c.exceptions.handler.InvExceptionHandler - invExceptionHandler  招标单查询失败
+2021-07-30 11:08:36.487 [http-nio-8080-exec-6] INFO  c.xdcplus.xdcweb.biz.controller.BidSheetController - agreeBidSheet RequestFlowDTO(sheetId=null, requestId=1420933214832238594, userId=1, toUserId=null, statusId=null, description=null, flowOption=null)
+2021-07-30 11:09:28.697 [http-nio-8080-exec-6] ERROR c.x.xdcweb.biz.service.impl.BidVendorServiceImpl - updateBidVendorStatusByPricing() queryNewBidVendorMaterialByMaterialId failed
+2021-07-30 11:09:28.697 [http-nio-8080-exec-6] ERROR c.x.x.b.c.exceptions.handler.InvExceptionHandler - invExceptionHandler  招标单查询失败
+2021-07-30 11:09:32.069 [http-nio-8080-exec-8] INFO  c.xdcplus.xdcweb.biz.controller.BidSheetController - agreeBidSheet RequestFlowDTO(sheetId=null, requestId=1420933214832238594, userId=1, toUserId=null, statusId=null, description=null, flowOption=null)
+2021-07-30 11:16:18.813 [http-nio-8080-exec-8] ERROR c.x.xdcweb.biz.service.impl.BidVendorServiceImpl - updateBidVendorStatusByPricing() queryNewBidVendorMaterialByMaterialId failed
+2021-07-30 11:16:18.813 [http-nio-8080-exec-8] ERROR c.x.x.b.c.exceptions.handler.InvExceptionHandler - invExceptionHandler  招标单查询失败
+2021-07-30 11:18:03.979 [http-nio-8080-exec-9] INFO  c.xdcplus.xdcweb.biz.controller.BidSheetController - agreeBidSheet RequestFlowDTO(sheetId=null, requestId=1420933214832238594, userId=1, toUserId=null, statusId=null, description=null, flowOption=null)

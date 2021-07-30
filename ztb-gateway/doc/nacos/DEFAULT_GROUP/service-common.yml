@@ -1,0 +1,58 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848/
+        namespace: ztb-manange
+
+  ldap:
+    # 配置ldap服务器的ip和端口
+    urls: ldap://10.20.1.11:389
+    # 要查询的唯一标识
+    base: dc=CORP,dc=XDCPLUS,dc=com
+    username: corp\Rong.Jia
+    password: qwerasdf!1234
+    objectClasses: organizationalPerson
+    ou: XDCPLUS
+  
+#knife4j配置
+knife4j:
+  # 是否是生产环境
+  production: false
+  #增强配置
+  setting:
+    enableSwaggerModels: true
+    enableDocumentManage: true
+    enableHost: false
+    enableHostText: http://localhost
+    enableRequestCache: true
+    enableFilterMultipartApis: false
+    enableFilterMultipartApiMethodType: POST
+    language: zh-CN
+    enableFooter: false
+    enableFooterCustom: true
+    footerCustomContent: Copyright © 2021 XDC+ All Rights Reserved
+
+#swagger公共信息
+swagger:
+  title: 招投标项目
+  description: 招投标项目接口文档系统
+  version: 1.0.0
+  license: Apache License, Version 2.0
+  license-url: https://www.apache.org/licenses/LICENSE-2.0.html
+  terms-of-service-url: https://www.apache.org/licenses/LICENSE-2.0.html
+  base-path: /**
+  contact:
+    name: 贾荣
+    email: Rong.Jia@xdcplus.com
+    url: https://www.xdcplus.com
+
+# 权限
+auth:
+  # RefreshToken过期时间-30分钟-30*60(秒为单位)
+  refreshTokenExpireTime: 3600
+
+
+
+
+

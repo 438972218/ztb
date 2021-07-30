@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdcplus.xdcweb.biz.mapper.InquiryMaterialMapper">
+
+    <resultMap type="com.xdcplus.xdcweb.biz.common.pojo.entity.InquiryMaterial" id="InquiryMaterialMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="inquirySheetId" column="inquiry_sheet_id" jdbcType="INTEGER"/>
+        <result property="inventoryOrganization" column="inventory_organization" jdbcType="VARCHAR"/>
+        <result property="materialCode" column="material_code" jdbcType="VARCHAR"/>
+        <result property="materialDescription" column="material_description" jdbcType="VARCHAR"/>
+        <result property="materialExplain" column="material_explain" jdbcType="VARCHAR"/>
+        <result property="quoteDetails" column="quote_details" jdbcType="VARCHAR"/>
+        <result property="quantity" column="quantity" jdbcType="INTEGER"/>
+        <result property="unit" column="unit" jdbcType="VARCHAR"/>
+        <result property="createdUser" column="created_user" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="INTEGER"/>
+        <result property="updatedUser" column="updated_user" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="version" column="version" jdbcType="INTEGER"/>
+        <result property="deleted" column="deleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryInquiryMaterial" resultMap="InquiryMaterialMap">
+        select
+          id, inquiry_sheet_id, inventory_organization, material_code, material_description, material_explain, quote_details, quantity, unit, created_user, created_time, updated_user, updated_time, description, version, deleted
+          from scm_inquiry_material
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="inquirySheetId != null">
+                and inquiry_sheet_id = #{inquirySheetId}
+            </if>
+            <if test="inventoryOrganization != null and inventoryOrganization != ''">
+                and inventory_organization = #{inventoryOrganization}
+            </if>
+            <if test="materialCode != null and materialCode != ''">
+                and material_code = #{materialCode}
+            </if>
+            <if test="materialDescription != null and materialDescription != ''">
+                and material_description = #{materialDescription}
+            </if>
+            <if test="materialExplain != null and materialExplain != ''">
+                and material_explain = #{materialExplain}
+            </if>
+            <if test="quoteDetails != null and quoteDetails != ''">
+                and quote_details = #{quoteDetails}
+            </if>
+            <if test="quantity != null">
+                and quantity = #{quantity}
+            </if>
+            <if test="unit != null and unit != ''">
+                and unit = #{unit}
+            </if>
+            <if test="createdUser != null and createdUser != ''">
+                and created_user = #{createdUser}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+            <if test="updatedUser != null and updatedUser != ''">
+                and updated_user = #{updatedUser}
+            </if>
+            <if test="updatedTime != null">
+                and updated_time = #{updatedTime}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="version != null">
+                and version = #{version}
+            </if>
+            <if test="deleted != null">
+                and deleted = #{deleted}
+            </if>
+        </where>
+    </select>
+
+</mapper>
+

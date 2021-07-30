@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdcplus.xdcweb.biz.mapper.PurchaseOrzInventoryOrzMapper">
+
+    <resultMap type="com.xdcplus.xdcweb.biz.common.pojo.entity.PurchaseOrzInventoryOrz" id="PurchaseOrzInventoryOrzMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="purchaseOrzId" column="purchase_orz_id" jdbcType="INTEGER"/>
+        <result property="inventoryOrzId" column="inventory_orz_id" jdbcType="INTEGER"/>
+        <result property="createdUser" column="created_user" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="INTEGER"/>
+        <result property="updatedUser" column="updated_user" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="version" column="version" jdbcType="INTEGER"/>
+        <result property="deleted" column="deleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryPurchaseOrzInventoryOrz" resultMap="PurchaseOrzInventoryOrzMap">
+        select
+        id, purchase_orz_id, inventory_orz_id, created_user, created_time, updated_user, updated_time, description,
+        version, deleted
+        from scm_purchase_orz_inventory_orz
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="purchaseOrzId != null">
+                and purchase_orz_id = #{purchaseOrzId}
+            </if>
+            <if test="inventoryOrzId != null">
+                and inventory_orz_id = #{inventoryOrzId}
+            </if>
+            <if test="createdUser != null and createdUser != ''">
+                and created_user = #{createdUser}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+            <if test="updatedUser != null and updatedUser != ''">
+                and updated_user = #{updatedUser}
+            </if>
+            <if test="updatedTime != null">
+                and updated_time = #{updatedTime}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="version != null">
+                and version = #{version}
+            </if>
+            <if test="deleted != null">
+                and deleted = #{deleted}
+            </if>
+        </where>
+    </select>
+
+</mapper>
+

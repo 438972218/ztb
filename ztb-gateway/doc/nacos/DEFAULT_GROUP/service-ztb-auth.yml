@@ -1,0 +1,20 @@
+spring:
+
+  # redis 缓存配置
+  redis:
+    host: localhost
+    port: 6379
+    database: 10
+
+swagger:
+  base-packages: com.xdcplus.xdcweb.auth.controller
+
+#knife4j配置
+knife4j:
+  #启用
+  enable: true
+
+feign:
+  #默认是不支持的，所以这里要开启，设置为true
+  hystrix:
+    enabled: true

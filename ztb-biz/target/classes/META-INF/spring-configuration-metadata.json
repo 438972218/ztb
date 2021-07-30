@@ -1,0 +1,90 @@
+{
+  "groups": [
+    {
+      "name": "url",
+      "type": "com.xdcplus.xdcweb.biz.common.config.UrlConfig",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig"
+    },
+    {
+      "name": "url.path",
+      "type": "com.xdcplus.xdcweb.biz.common.config.UrlConfig$ServerPath",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig",
+      "sourceMethod": "getPath()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "url.ip",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "description": "ip",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig"
+    },
+    {
+      "name": "url.path.ie-request-flow-post-process",
+      "type": "java.lang.String",
+      "description": "请求流过程",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig$ServerPath"
+    },
+    {
+      "name": "url.path.ie-request-query-request-by-id",
+      "type": "java.lang.String",
+      "description": "根据id查询请求",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig$ServerPath"
+    },
+    {
+      "name": "url.path.ie-request-query-request-by-parent-id",
+      "type": "java.lang.String",
+      "description": "根据父id查询请求",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig$ServerPath"
+    },
+    {
+      "name": "url.path.ie-request-save-request",
+      "type": "java.lang.String",
+      "description": "请求",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig$ServerPath"
+    },
+    {
+      "name": "url.path.pce-sys-company-get-sys-company-tree",
+      "type": "java.lang.String",
+      "description": "pce 公司树",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig$ServerPath"
+    },
+    {
+      "name": "url.path.pce-sys-company-judge-group-company",
+      "type": "java.lang.String",
+      "description": "pce sys判断集团公司",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig$ServerPath"
+    },
+    {
+      "name": "url.path.pce-sys-company-query-by-user-id",
+      "type": "java.lang.String",
+      "description": "pce 公司查询用户id",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig$ServerPath"
+    },
+    {
+      "name": "url.path.pce-sys-role-query-by-user-id",
+      "type": "java.lang.String",
+      "description": "pce 根据用户id查询角色",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig$ServerPath"
+    },
+    {
+      "name": "url.path.pce-sys-user-query-by-user-id",
+      "type": "java.lang.String",
+      "description": "pce 根据id查询用户",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig$ServerPath"
+    },
+    {
+      "name": "url.port",
+      "type": "java.util.Map<java.lang.String,java.lang.Integer>",
+      "description": "port",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig"
+    },
+    {
+      "name": "url.separate-ip",
+      "type": "java.lang.String",
+      "description": "单独的ip",
+      "sourceType": "com.xdcplus.xdcweb.biz.common.config.UrlConfig"
+    }
+  ],
+  "hints": []
+}

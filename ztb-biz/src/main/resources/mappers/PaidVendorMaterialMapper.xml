@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdcplus.xdcweb.biz.mapper.PaidVendorMaterialMapper">
+
+    <resultMap type="com.xdcplus.xdcweb.biz.common.pojo.entity.PaidVendorMaterial" id="PaidVendorMaterialMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="materialId" column="material_id" jdbcType="INTEGER"/>
+        <result property="paidVendorId" column="paid_vendor_id" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="offeringNumber" column="offering_number" jdbcType="INTEGER"/>
+        <result property="offeringType" column="offering_type" jdbcType="VARCHAR"/>
+        <result property="abandonInquiry" column="abandon_inquiry" jdbcType="VARCHAR"/>
+        <result property="repeatOffer" column="repeat_offer" jdbcType="VARCHAR"/>
+        <result property="price" column="price" jdbcType="NUMERIC"/>
+        <result property="offeringPeriodFrom" column="offering_period_from" jdbcType="INTEGER"/>
+        <result property="offeringPeriodTo" column="offering_period_to" jdbcType="INTEGER"/>
+        <result property="deliveryDate" column="delivery_date" jdbcType="INTEGER"/>
+        <result property="deliveryCycle" column="delivery_cycle" jdbcType="VARCHAR"/>
+        <result property="offeringClarification" column="offering_clarification" jdbcType="VARCHAR"/>
+        <result property="minSupplyQuantity" column="min_supply_quantity" jdbcType="VARCHAR"/>
+        <result property="dickerPrice" column="dicker_price" jdbcType="NUMERIC"/>
+        <result property="dickerReason" column="dicker_reason" jdbcType="VARCHAR"/>
+        <result property="allottedQuantity" column="allotted_quantity" jdbcType="VARCHAR"/>
+        <result property="allottedProp" column="allotted_prop" jdbcType="VARCHAR"/>
+        <result property="unit" column="unit" jdbcType="VARCHAR"/>
+        <result property="createdUser" column="created_user" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="INTEGER"/>
+        <result property="updatedUser" column="updated_user" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="version" column="version" jdbcType="INTEGER"/>
+        <result property="deleted" column="deleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryPaidVendorMaterial" resultMap="PaidVendorMaterialMap">
+        select
+          id, material_id, paid_vendor_id, status,offering_number,offering_type, abandon_inquiry, repeat_offer, price, offering_period_from, offering_period_to, delivery_date, delivery_cycle, offering_clarification, min_supply_quantity, dicker_price, dicker_reason, allotted_quantity, allotted_prop, unit, created_user, created_time, updated_user, updated_time, description, version, deleted
+          from scm_paid_vendor_material
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="materialId != null and materialId != ''">
+                and material_id = #{materialId}
+            </if>
+            <if test="paidVendorId != null and paidVendorId != ''">
+                and paid_vendor_id = #{paidVendorId}
+            </if>
+            <if test="status != null and status != ''">
+                and status = #{status}
+            </if>
+            <if test="offeringNumber != null and offeringNumber != ''">
+                and offering_number = #{offeringNumber}
+            </if>
+            <if test="offeringType != null and offeringType != ''">
+                and offering_type = #{offeringType}
+            </if>
+            <if test="abandonInquiry != null and abandonInquiry != ''">
+                and abandon_inquiry = #{abandonInquiry}
+            </if>
+            <if test="repeatOffer != null and repeatOffer != ''">
+                and repeat_offer = #{repeatOffer}
+            </if>
+            <if test="price != null">
+                and price = #{price}
+            </if>
+            <if test="offeringPeriodFrom != null">
+                and offering_period_from = #{offeringPeriodFrom}
+            </if>
+            <if test="offeringPeriodTo != null">
+                and offering_period_to = #{offeringPeriodTo}
+            </if>
+            <if test="deliveryDate != null">
+                and delivery_date = #{deliveryDate}
+            </if>
+            <if test="deliveryCycle != null and deliveryCycle != ''">
+                and delivery_cycle = #{deliveryCycle}
+            </if>
+            <if test="offeringClarification != null and offeringClarification != ''">
+                and offering_clarification = #{offeringClarification}
+            </if>
+            <if test="minSupplyQuantity != null and minSupplyQuantity != ''">
+                and min_supply_quantity = #{minSupplyQuantity}
+            </if>
+            <if test="dickerPrice != null">
+                and dicker_price = #{dickerPrice}
+            </if>
+            <if test="dickerReason != null and dickerReason != ''">
+                and dicker_reason = #{dickerReason}
+            </if>
+            <if test="allottedQuantity != null and allottedQuantity != ''">
+                and allotted_quantity = #{allottedQuantity}
+            </if>
+            <if test="allottedProp != null and allottedProp != ''">
+                and allotted_prop = #{allottedProp}
+            </if>
+            <if test="unit != null and unit != ''">
+                and unit = #{unit}
+            </if>
+            <if test="createdUser != null and createdUser != ''">
+                and created_user = #{createdUser}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+            <if test="updatedUser != null and updatedUser != ''">
+                and updated_user = #{updatedUser}
+            </if>
+            <if test="updatedTime != null">
+                and updated_time = #{updatedTime}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="version != null">
+                and version = #{version}
+            </if>
+            <if test="deleted != null">
+                and deleted = #{deleted}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryRankingByVendorId" resultType="java.lang.Integer">
+        SELECT min(b.rank) from (
+        SELECT a.* from
+            (SELECT *,( @rowNum := @rowNum + 1 ) AS rank
+                from scm_paid_vendor_material,( SELECT ( @rowNum := 0 ) ) b
+                    where material_id=#{materialId}
+                        and offering_type =#{offeringType}
+                    ORDER BY created_time desc
+                ) a where a.paid_vendor_id=#{paidVendorId}
+                ) b GROUP BY b.paid_vendor_id
+    </select>
+    <select id="queryNewPaidVendorMaterialByMaterialId" resultMap="PaidVendorMaterialMap">
+        SELECT vm.*
+            FROM scm_paid_vendor_material vm
+        WHERE vm.offering_number = (
+            SELECT max( offering_number )
+                FROM scm_paid_vendor_material
+            WHERE paid_vendor_id = vm.paid_vendor_id
+            AND material_id = #{materialId}
+            <if test="statusList != null">
+                AND status in
+                <foreach collection="statusList" index="index" item="item" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+            <if test="paidVendorId != null">
+                AND paid_vendor_id = #{paidVendorId}
+            </if>)
+	    AND vm.material_id = #{materialId}
+        <if test="paidVendorId != null">
+            AND vm.paid_vendor_id = #{paidVendorId}
+        </if>
+        <if test="statusList != null">
+                AND status in
+                <foreach collection="statusList" index="index" item="item" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+    </select>
+
+</mapper>
+

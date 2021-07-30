@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdcplus.xdcweb.biz.mapper.BidSpecialistScoreMapper">
+
+    <resultMap type="com.xdcplus.xdcweb.biz.common.pojo.entity.BidSpecialistScore" id="BidSpecialistScoreMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="bidVendorId" column="bid_vendor_id" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="bidTotalPrice" column="bid_total_price" jdbcType="NUMERIC"/>
+        <result property="minPriceRatio" column="min_price_ratio" jdbcType="VARCHAR"/>
+        <result property="score" column="score" jdbcType="VARCHAR"/>
+        <result property="createdUser" column="created_user" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="INTEGER"/>
+        <result property="updatedUser" column="updated_user" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="version" column="version" jdbcType="INTEGER"/>
+        <result property="deleted" column="deleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryBidSpecialistScore" resultMap="BidSpecialistScoreMap">
+        select
+          id, bid_vendor_id,user_id, bid_total_price, min_price_ratio, score, created_user, created_time, updated_user, updated_time, description, version, deleted
+          from scm_bid_specialist_score
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="bidVendorId != null">
+                and bid_vendor_id = #{bidVendorId}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="bidTotalPrice != null">
+                and bid_total_price = #{bidTotalPrice}
+            </if>
+            <if test="minPriceRatio != null and minPriceRatio != ''">
+                and min_price_ratio = #{minPriceRatio}
+            </if>
+            <if test="score != null and score != ''">
+                and score = #{score}
+            </if>
+            <if test="createdUser != null and createdUser != ''">
+                and created_user = #{createdUser}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+            <if test="updatedUser != null and updatedUser != ''">
+                and updated_user = #{updatedUser}
+            </if>
+            <if test="updatedTime != null">
+                and updated_time = #{updatedTime}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="version != null">
+                and version = #{version}
+            </if>
+            <if test="deleted != null">
+                and deleted = #{deleted}
+            </if>
+        </where>
+    </select>
+    <select id="queryBidSpecialistScoreBySheetId" resultMap="BidSpecialistScoreMap">
+        select sbss.*
+          from scm_bid_specialist_score sbss left join scm_bid_specialist sbs on sbs.id=sbss.user_id
+          <where>
+            <if test="bidSheetId != null">
+                and sbs.bid_sheet_id = #{bidSheetId}
+            </if>
+            <if test="userId != null">
+                and sbs.user_id = #{userId}
+            </if>
+          </where>
+    </select>
+
+</mapper>
+

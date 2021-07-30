@@ -1,0 +1,64 @@
+server:
+  port: 8080
+
+#spring:
+#  cloud:
+#    nacos:
+#      # 配置中心
+#      config:
+#        server-addr: ${NACOS_HOST}:${NACOS_PORT}
+#        namespace: ztb-biz
+
+spring:
+  # mysql 配置
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DATABASE}?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
+    #schema:
+    #  - classpath:sql/schema.sql
+
+  # redis 缓存配置
+  redis:
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT}
+    database: ${REDIS_DATABASE}
+
+swagger:
+  base-packages: com.xdcplus.xdcweb.biz.controller
+
+file:
+  minio:
+    enable: true
+    endpoint: http://${MINIO_HOST}:${MINIO_PORT}
+    bucket: ${MINIO_BUCKET}
+    access-key: ${MINIO_USERNAME}
+    secret-key: ${MINIO_PASSWORD}
+
+#knife4j配置
+knife4j:
+  #启用
+  enable: true
+
+url:
+  ip:
+    # 权限收放引擎IP
+    permControlEngineIp: ${PCE_IP}
+    # 流程引擎IP
+    interactionEngineIp: ${IE_IP}
+  port:
+    # 权限收放引擎端口
+    permControlEnginePort: ${PCE_PORT}
+    # 流程引擎端口
+    interactionEnginePort: ${IE_PORT}
+  path:
+    pceSysCompanyQueryByUserId: ${PCE_API_COMP_QUERY:/api/pce/sysCompany/queryById/{id}}
+    pceSysCompanyGetSysCompanyTree: ${PCE_API_COMP_TREE:/api/pce/sysCompany/getSysCompanyTree}
+    pceSysCompanyJudgeGroupCompany: ${PCE_API_JUDGE_COMP:/api/pce/sysCompany/judgeGroupCompany/{id}}
+    pceSysRoleQueryByUserId: ${PCE_API_ROLE_QUERY:/api/pce/sysRole/queryByUserId/{id}}
+    pceSysUserQueryByUserId: ${PCE_API_ROLE_QUERY:/api/pce/sysUser/{id}}
+    ieRequestFlowPostProcess: ${PCE_API_POST_PROCESS:/interaction/requestFlow}
+    ieRequestSaveRequest: ${PCE_API_SAVE_REQUEST:/interaction/request}
+    ieRequestQueryRequestById: ${PCE_API_QUERY_BY_ID:/interaction/request/{id}}
+    ieRequestQueryRequestByParentId: ${PCE_API_QUERY_BY_PARENT_ID:/interaction/request}
+

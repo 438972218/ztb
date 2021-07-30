@@ -1,0 +1,122 @@
+version: "3"
+
+services:
+  admin:
+    image: 10.20.54.132:8000/sc/ztb-manage-admin:latest
+    container_name: ztb-manage-admin
+    restart: always
+    env_file:
+      - ./conf/common/nacos.env
+    expose:
+      - 8080
+    depends_on:
+      - ztb-biz
+    volumes:
+      - /data/ztb-manage/logs/admin:/logs
+    networks:
+      - ztb_manage_net
+
+  ztb-biz:
+    image: 10.20.54.132:8000/sc/ztb-biz:latest
+    restart: always
+    container_name: ztb-biz
+    environment:
+      MYSQL_HOST: 10.20.54.133
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: ztb_biz
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: xdcplus.com
+      REDIS_HOST: 10.20.54.133
+      REDIS_PORT: 6379
+      REDIS_DATABASE: 5
+      ACTIVE_NAME: pro
+      NACOS_HOST: 10.20.54.133
+      NACOS_PORT: 8848
+      MINIO_HOST: 10.20.54.133
+      MINIO_PORT: 9000
+      MINIO_BUCKET: ztb
+      MINIO_USERNAME: minio
+      MINIO_PASSWORD: minio123
+      PCE_IP: 10.20.54.133
+      IE_IP: 10.20.54.133
+      PCE_PORT: 10000
+      IE_PORT: 10001
+    ports:
+      - 9006:8080
+    expose:
+      - 8080
+    volumes:
+      - /data/ztb-manage/logs/biz:/logs
+    networks:
+      - ztb_manage_net
+
+#  gateway:
+#    image: 10.20.54.132:8000/sc/ztb-manage-gateway:latest
+#    container_name: ztb-manage-gateway
+#    restart: always
+#    env_file:
+#      - ./conf/common/nacos.env
+#    expose:
+#      - 8080
+#    depends_on:
+#      - ztb-biz
+#    #     - ztb-auth
+#    volumes:
+#      - /data/ztb-manage/logs/gateway:/logs
+#    networks:
+#      - ztb_manage_net
+
+  #  ztb-auth:
+  #    image: 10.20.54.132:8000/sc/ztb-manage-ztb-auth:latest
+  #    container_name: ztb-manage-ztb-auth
+  #    restart: always
+  #    env_file:
+  #      - ./conf/common/nacos.env
+  #    expose:
+  #      - 8080
+  #    volumes:
+  #      - /data/ztb-manage/logs/auth:/logs
+  #    networks:
+  #      - ztb_manage_net
+
+  ztb-manage-web:
+    image: 10.20.54.132:8000/sc/ztb-manage-web:latest
+    container_name: ztb-manage-web
+    environment:
+      SEVER_HOST: http://10.20.54.133
+      SEVER_PORT: 10000
+      API_ZTB_PREFIX: /api/ztb
+      API_INV_PREFIX: /api/inv
+      API_PCE_PREFIX: /api/pce
+      API_IE_PREFIX: /interaction
+    restart: always
+    depends_on:
+      #      - ztb-auth
+      - ztb-biz
+    expose:
+      - 80
+    networks:
+      - ztb_manage_net
+
+  proxy:
+    image: nginx:1.20.0
+    container_name: ztb-manage-proxy
+    environment:
+      - TZ=Asia/Shanghai
+    restart: always
+    depends_on:
+      - ztb-biz
+      #      - ztb-auth
+      - ztb-manage-web
+    ports:
+      - 10000:80
+    volumes:
+      - /data/ztb-manage/logs/proxy:/var/log/nginx
+      - ./conf/proxy/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - ztb_manage_net
+
+networks:
+  ztb_manage_net:
+    external: true
+

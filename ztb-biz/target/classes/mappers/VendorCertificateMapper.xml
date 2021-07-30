@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdcplus.xdcweb.biz.mapper.VendorCertificateMapper">
+
+    <resultMap type="com.xdcplus.xdcweb.biz.common.pojo.entity.VendorCertificate" id="VendorCertificateMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="vendorId" column="vendor_id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="VARCHAR"/>
+        <result property="attachmentName" column="attachment_name" jdbcType="VARCHAR"/>
+        <result property="attachmentUrl" column="attachment_url" jdbcType="VARCHAR"/>
+        <result property="expireTime" column="expire_time" jdbcType="INTEGER"/>
+        <result property="uploadTime" column="upload_time" jdbcType="INTEGER"/>
+        <result property="createdUser" column="created_user" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="INTEGER"/>
+        <result property="updatedUser" column="updated_user" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="version" column="version" jdbcType="INTEGER"/>
+        <result property="deleted" column="deleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryVendorCertificate" resultMap="VendorCertificateMap">
+        select
+        id,vendor_id, name, type,attachment_name,attachment_url expire_time, upload_time, created_user, created_time, updated_user, updated_time, description,
+        version, deleted
+        from scm_vendor_certificate
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="vendorId != null">
+                and vendor_id = #{vendorId}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="type != null and type != ''">
+                and type = #{type}
+            </if>
+            <if test="attachmentName != null and attachmentName != ''">
+                and attachment_Name = #{attachmentName}
+            </if>
+            <if test="attachmentUrl != null and attachmentUrl != ''">
+                and attachment_Url = #{attachmentUrl}
+            </if>
+            <if test="expireTime != null">
+                and expire_time = #{expireTime}
+            </if>
+            <if test="uploadTime != null">
+                and upload_time = #{uploadTime}
+            </if>
+            <if test="createdUser != null and createdUser != ''">
+                and created_user = #{createdUser}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+            <if test="updatedUser != null and updatedUser != ''">
+                and updated_user = #{updatedUser}
+            </if>
+            <if test="updatedTime != null">
+                and updated_time = #{updatedTime}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="version != null">
+                and version = #{version}
+            </if>
+            <if test="deleted != null">
+                and deleted = #{deleted}
+            </if>
+        </where>
+    </select>
+
+</mapper>
+
